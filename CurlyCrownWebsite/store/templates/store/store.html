@@ -2,24 +2,21 @@
 {% load static %}
 
 
-
-
-
-
-
 {% block content %}
     <div class="row">
+        {% for product in products %}
         <div class="col-lg-4">
-            <img class="thumbnail" src="{% static 'images/placeholder.png' %}" />
-            <div class="box-element product">
-                <h6><strong> Product </strong></h6>
+            <img class="thumbnail" src="{{ product.imageURL }}" />
+            <div class="box-element product" style="direction: rtl;">
+                <h6><strong>{{product.name}}</strong></h6>
                 <hr>
-                <button class="btn btn-outline-secondary add-btn">
-                    add to cart
+                <h4 style="display:inline-block;">{{product.price|floatformat:2}} ريال</h4>
+                <button class="btn btn-outline-secondary add-btn" style="float: left;">
+                    إضافة للسلة
                 </button>
-                <a class="btn btn-outline-success" href= "#">view</a>
-                <h4 style="display:inline-block; float:right">$20</h4>
+                <a class="btn" style="float: left;colo" href= "#">تفاصيل</a>
             </div>
         </div>
+        {% endfor %}
     </div>
 {% endblock content %}
