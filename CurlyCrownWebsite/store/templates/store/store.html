@@ -11,10 +11,10 @@
                 <h6><strong>{{product.name}}</strong></h6>
                 <hr>
                 <h4 style="display:inline-block;">{{product.price|floatformat:2}} ريال</h4>
-                <button class="btn btn-outline-secondary add-btn" style="float: left;">
+                <button class="btn btn-outline-secondary add-btn update-cart" data-product = "{{product.id}}" data-action="add" style="float: left;">
                     إضافة للسلة
                 </button>
-                <a class="btn" style="float: left;colo" href= "#">تفاصيل</a>
+                <a class="btn" style="float: left;" href= "#">تفاصيل</a>
             </div>
         </div>
         {% endfor %}
